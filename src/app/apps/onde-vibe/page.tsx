@@ -144,7 +144,7 @@ export default function OndeVibePage() {
 
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="https://github.com/FreeRiverHouse/onde-vibe-releases/releases/latest/download/onde-vibe-1.0.0-arm64.dmg"
+                  href="https://drive.google.com/uc?export=download&id=1YG5mn3-MmK43hMsktwdHqb1WTuG9nkF0&confirm=t"
                   className="btn-primary text-base px-8 py-4"
                 >
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -267,7 +267,7 @@ export default function OndeVibePage() {
             <p className="text-slate-600 text-sm mb-8">~1.6 GB download · arm64 DMG</p>
 
             <a
-              href="https://github.com/FreeRiverHouse/onde-vibe-releases/releases/latest/download/onde-vibe-1.0.0-arm64.dmg"
+              href="https://drive.google.com/uc?export=download&id=1YG5mn3-MmK43hMsktwdHqb1WTuG9nkF0&confirm=t"
               className="btn-primary text-base px-10 py-4 inline-flex"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
