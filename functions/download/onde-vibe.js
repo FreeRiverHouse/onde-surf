@@ -80,7 +80,7 @@ const PAGE = (error = '') => `<!DOCTYPE html>
     <div class="logo">onde.surf</div>
     <h1>ONDE VIBE</h1>
     <p>Enter your email and access code<br>to download the macOS app.</p>
-    <form method="POST" action="/download/onde-vibe">
+    <form method="POST" action="/download/onde-vibe" enctype="multipart/form-data">
       <div class="field">
         <label>Email</label>
         <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
@@ -105,6 +105,7 @@ export async function onRequest(context) {
     const body = await request.formData().catch(() => null)
     const email = (body?.get('email') ?? '').trim().toLowerCase()
     const key = body?.get('key') ?? ''
+
 
     if (key !== PASSWORD) {
       return new Response(PAGE('Wrong access code. Try again.'), {
