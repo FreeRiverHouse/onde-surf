@@ -132,7 +132,7 @@ const PAGE = (error = '') => `<!DOCTYPE html>
     }
     document.addEventListener('keydown', e => { if(e.key==='Enter') doDownload() })
     </script>
-    <p class="hint">macOS arm64 · v1.0.1 · ~1.5 GB</p>
+    <p class="hint">macOS arm64 · v1.0.3 · ~158 MB</p>
     <a class="back" href="/apps/onde-vibe">← Back to Onde Vibe</a>
   </div>
 </body>
