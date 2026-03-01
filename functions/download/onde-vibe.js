@@ -1,4 +1,4 @@
-const DMG_URL = 'https://github.com/FreeRiverHouse/onde-vibe-releases/releases/latest/download/onde-vibe-1.0.1-arm64.dmg'
+const DMG_URL = 'https://github.com/FreeRiverHouse/onde-vibe-releases/releases/latest/download/onde-vibe-1.0.3-arm64.dmg'
 const PASSWORD = 'VIBINGFr33!'
 
 const PAGE = (error = '') => `<!DOCTYPE html>
