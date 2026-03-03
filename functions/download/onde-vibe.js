@@ -1,4 +1,4 @@
-const DMG_URL = 'https://github.com/FreeRiverHouse/onde-vibe-releases/releases/latest/download/onde-vibe-1.0.4-arm64.dmg'
+const DMG_URL = 'https://github.com/FreeRiverHouse/onde-vibe-releases/releases/latest/download/onde-vibe-1.0.5-arm64.dmg'
 const PASSWORD = 'VIBINGFr33!'
 
 const PAGE = (error = '') => `<!DOCTYPE html>
@@ -132,7 +132,7 @@ const PAGE = (error = '') => `<!DOCTYPE html>
     }
     document.addEventListener('keydown', e => { if(e.key==='Enter') doDownload() })
     </script>
-    <p class="hint">macOS arm64 · v1.0.4 · ~158 MB</p>
+    <p class="hint">macOS arm64 · v1.0.5 · ~1.5 GB</p>
     <a class="back" href="/apps/onde-vibe">← Back to Onde Vibe</a>
   </div>
 </body>
