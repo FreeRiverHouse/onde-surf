@@ -73,6 +73,65 @@ const PAGE = (error = '') => `<!DOCTYPE html>
     .back:hover { color: #94a3b8; }
     .divider { margin: 20px 0; border: none; border-top: 1px solid rgba(255,255,255,0.06); }
     .hint { font-size: 12px; color: #334155; margin-top: 16px; text-align: center; }
+    #install-steps {
+      display: none;
+      margin-top: 24px;
+      text-align: left;
+    }
+    #install-steps h2 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+    .step {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(14,165,233,0.15);
+      border: 1px solid rgba(14,165,233,0.3);
+      color: #0ea5e9;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-text { font-size: 13px; color: #94a3b8; line-height: 1.5; padding-top: 2px; }
+    .step-text strong { color: #e2e8f0; }
+    .step-text code {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-size: 11px;
+      color: #7dd3fc;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+    .gatekeeper-box {
+      background: rgba(251,146,60,0.07);
+      border: 1px solid rgba(251,146,60,0.2);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-top: 6px;
+    }
+    .gatekeeper-box p {
+      font-size: 12px;
+      color: #fb923c;
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+    .gatekeeper-box p:last-child { margin-bottom: 0; }
   </style>
 </head>
 <body>
@@ -81,15 +140,44 @@ const PAGE = (error = '') => `<!DOCTYPE html>
     <h1>ONDE VIBE</h1>
     <p>Enter your email and access code<br>to download the macOS app.</p>
     <div id="error-msg" style="display:none;margin-top:14px;font-size:13px;color:#f97316;text-align:center"></div>
-    <div class="field">
-      <label>Email</label>
-      <input type="email" id="email" placeholder="you@example.com" required autocomplete="email">
+    <div id="form-area">
+      <div class="field">
+        <label>Email</label>
+        <input type="email" id="email" placeholder="you@example.com" required autocomplete="email">
+      </div>
+      <div class="field">
+        <label>Access code</label>
+        <input type="password" id="key" placeholder="••••••••••" required autocomplete="off">
+      </div>
+      <button id="btn" onclick="doDownload()">Download for macOS →</button>
+      <p class="hint">macOS arm64 · v1.0.7 · ~1.5 GB</p>
     </div>
-    <div class="field">
-      <label>Access code</label>
-      <input type="password" id="key" placeholder="••••••••••" required autocomplete="off">
+    <div id="install-steps">
+      <h2>Installation steps</h2>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">Open the <strong>.dmg</strong> file from your Downloads folder when it finishes.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">Drag <strong>ONDE VIBE</strong> into your <strong>Applications</strong> folder.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <strong>First launch only</strong> — macOS may block the app with a security warning.
+          <div class="gatekeeper-box">
+            <p>If you see <em>"Apple could not verify ONDE VIBE…"</em>:</p>
+            <p>Go to <strong>System Settings → Privacy &amp; Security</strong>, scroll down, and click <strong>Open Anyway</strong>.</p>
+            <p>Or right-click <strong>ONDE VIBE</strong> in Applications and choose <strong>Open</strong>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text">Sign in with your Google account and start dictating with the <strong>Fn key</strong>.</div>
+      </div>
     </div>
-    <button id="btn" onclick="doDownload()">Download for macOS →</button>
     <script>
     async function doDownload() {
       const email = document.getElementById('email').value.trim()
@@ -108,14 +196,13 @@ const PAGE = (error = '') => `<!DOCTYPE html>
           redirect: 'manual'
         })
         if (resp.type === 'opaqueredirect' || resp.status === 302 || resp.ok) {
-          btn.textContent = 'Starting download...'
-          // Follow the redirect by navigating
           const data = await resp.json().catch(() => null)
           if (data && data.url) {
             window.location.href = data.url
-          } else {
-            btn.textContent = 'Download started!'
           }
+          // Show install instructions, hide form
+          document.getElementById('form-area').style.display = 'none'
+          document.getElementById('install-steps').style.display = 'block'
         } else {
           const data = await resp.json().catch(() => ({}))
           err.textContent = data.error || 'Wrong access code. Try again.'
@@ -132,7 +219,6 @@ const PAGE = (error = '') => `<!DOCTYPE html>
     }
     document.addEventListener('keydown', e => { if(e.key==='Enter') doDownload() })
     </script>
-    <p class="hint">macOS arm64 · v1.0.7 · ~1.5 GB</p>
     <a class="back" href="/apps/onde-vibe">← Back to Onde Vibe</a>
   </div>
 </body>
