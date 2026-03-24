@@ -4,6 +4,46 @@
 
 @layer base {
   :root {
+    --onde-teal: #5B9AA0;
+    --onde-teal-light: #7EB8C4;
+    --onde-teal-glow: rgba(91, 154, 160, 0.4);
+    --onde-blue: #26619C;
+    --onde-blue-glow: rgba(38, 97, 156, 0.4);
+    --onde-purple: #4A7C9B;
+    --onde-purple-glow: rgba(74, 124, 155, 0.4);
+    --onde-dark: #0B1929;
+    --onde-dark-surface: #122A42;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+  }
+
+  body {
+    background: var(--onde-dark);
+    color: white;
+  }
+}
+
+@layer components {
+  .card-3d {
+    @apply relative rounded-3xl border border-white/5 overflow-hidden;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    transition: all 0.4s ease;
+  }
+  .card-3d:hover {
+    @apply border-white/10;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
+  }
+  .text-gradient-neon {
+    background: linear-gradient(135deg, var(--onde-teal) 0%, var(--onde-blue) 50%, var(--onde-purple) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@layer base {
+  :root {
     --font-geist-sans: 'Inter', system-ui, sans-serif;
     --font-geist-mono: 'JetBrains Mono', monospace;
   }
