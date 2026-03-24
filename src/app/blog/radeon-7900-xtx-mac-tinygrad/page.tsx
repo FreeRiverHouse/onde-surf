@@ -208,7 +208,7 @@ export default function RadeonTinygradArticle() {
           {/* Share buttons — top */}
           <ShareButtons
             title="Running AMD Radeon RX 7900 XTX on macOS with TinyGrad"
-            url="https://onde.la/blog/radeon-7900-xtx-mac-tinygrad"
+            url="https://onde.surf/blog/radeon-7900-xtx-mac-tinygrad"
             className="mt-6"
           />
         </motion.div>
@@ -740,7 +740,7 @@ GSP_INIT_DONE returns NV_ERR_TIMEOUT`}</CodeBlock>
         <div className="mt-16 pt-8 border-t border-white/15">
           <ShareButtons
             title="Running AMD Radeon RX 7900 XTX on macOS with TinyGrad"
-            url="https://onde.la/blog/radeon-7900-xtx-mac-tinygrad"
+            url="https://onde.surf/blog/radeon-7900-xtx-mac-tinygrad"
           />
         </div>
 

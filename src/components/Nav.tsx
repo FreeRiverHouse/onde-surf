@@ -32,6 +32,7 @@ export default function Nav() {
           <div className="flex items-center gap-1">
             <NavLink href="/" active={path === '/'}>Home</NavLink>
             <NavLink href="/apps/" active={path.startsWith('/apps')}>Apps</NavLink>
+            <NavLink href="/blog/" active={path.startsWith('/blog')}>Blog</NavLink>
             <a
               href="https://onde.la"
               target="_blank"

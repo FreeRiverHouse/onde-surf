@@ -7,26 +7,26 @@ const articleJsonLd = {
   headline: 'Running AMD Radeon RX 7900 XTX on macOS with TinyGrad: The "Impossible" Setup',
   description:
     'We got a Radeon RX 7900 XTX (24GB VRAM) running ML inference on a MacBook Pro M1 via Thunderbolt eGPU, using TinyGrad with a small patch.',
-  image: 'https://onde.la/images/og-onde.png',
+  image: 'https://onde.surf/images/og-onde.png',
   datePublished: '2026-02-15',
   dateModified: '2026-02-15',
   author: {
     '@type': 'Organization',
     name: 'FreeRiverHouse',
-    url: 'https://onde.la',
+    url: 'https://onde.surf',
   },
   publisher: {
     '@type': 'Organization',
     name: 'Onde',
-    url: 'https://onde.la',
+    url: 'https://onde.surf',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://onde.la/icon.svg',
+      url: 'https://onde.surf/icon.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://onde.la/blog/radeon-7900-xtx-mac-tinygrad',
+    '@id': 'https://onde.surf/blog/radeon-7900-xtx-mac-tinygrad',
   },
   keywords: [
     'AMD Radeon RX 7900 XTX',
@@ -54,13 +54,13 @@ const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://onde.la' },
-    { '@type': 'ListItem', position: 2, name: 'Tech', item: 'https://onde.la/blog' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://onde.surf' },
+    { '@type': 'ListItem', position: 2, name: 'Tech', item: 'https://onde.surf/blog' },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Radeon 7900 XTX + TinyGrad on macOS',
-      item: 'https://onde.la/blog/radeon-7900-xtx-mac-tinygrad',
+      item: 'https://onde.surf/blog/radeon-7900-xtx-mac-tinygrad',
     },
   ],
 }
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
     title: 'Running AMD Radeon RX 7900 XTX on macOS with TinyGrad',
     description:
       'The "impossible" setup: 24GB VRAM eGPU doing ML inference on a MacBook Pro M1 with TinyGrad. Here\'s how we did it.',
-    url: 'https://onde.la/blog/radeon-7900-xtx-mac-tinygrad',
+    url: 'https://onde.surf/blog/radeon-7900-xtx-mac-tinygrad',
     siteName: 'Onde',
     type: 'article',
     publishedTime: '2026-02-15T00:00:00Z',

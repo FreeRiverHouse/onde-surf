@@ -165,7 +165,7 @@ export default function MultiAgentSetupArticle() {
           {/* Share buttons — top */}
           <ShareButtons
             title="Multi-Agent Setup: 2 Macs, 5 Bots, Zero Humans"
-            url="https://onde.la/blog/multi-agent-setup"
+            url="https://onde.surf/blog/multi-agent-setup"
             className="mt-6"
           />
         </motion.div>
@@ -692,7 +692,7 @@ export default function MultiAgentSetupArticle() {
         <div className="mt-16 pt-8 border-t border-white/15">
           <ShareButtons
             title="Multi-Agent Setup: 2 Macs, 5 Bots, Zero Humans"
-            url="https://onde.la/blog/multi-agent-setup"
+            url="https://onde.surf/blog/multi-agent-setup"
           />
         </div>
 

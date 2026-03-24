@@ -7,26 +7,26 @@ const articleJsonLd = {
   headline: 'Multi-Agent Setup: 2 Macs, 5 Bots, Zero Humans',
   description:
     'How we run a 24/7 AI workforce with 2 Mac Minis, 5 Claude-powered agents, a shared task system on git, and persistent memory — for about $200/month.',
-  image: 'https://onde.la/images/og-onde.png',
+  image: 'https://onde.surf/images/og-onde.png',
   datePublished: '2026-02-16',
   dateModified: '2026-02-16',
   author: {
     '@type': 'Organization',
     name: 'FreeRiverHouse',
-    url: 'https://onde.la',
+    url: 'https://onde.surf',
   },
   publisher: {
     '@type': 'Organization',
     name: 'Onde',
-    url: 'https://onde.la',
+    url: 'https://onde.surf',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://onde.la/icon.svg',
+      url: 'https://onde.surf/icon.svg',
     },
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': 'https://onde.la/blog/multi-agent-setup',
+    '@id': 'https://onde.surf/blog/multi-agent-setup',
   },
   keywords: [
     'AI agents',
@@ -53,13 +53,13 @@ const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://onde.la' },
-    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://onde.la/blog' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://onde.surf' },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://onde.surf/blog' },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Multi-Agent Setup',
-      item: 'https://onde.la/blog/multi-agent-setup',
+      item: 'https://onde.surf/blog/multi-agent-setup',
     },
   ],
 }
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     title: 'Multi-Agent Setup: 2 Macs, 5 Bots, Zero Humans',
     description:
       'How we run a 24/7 AI workforce with 2 Mac Minis, 5 Claude-powered agents, and git-based coordination — for ~$200/month.',
-    url: 'https://onde.la/blog/multi-agent-setup',
+    url: 'https://onde.surf/blog/multi-agent-setup',
     siteName: 'Onde',
     type: 'article',
     publishedTime: '2026-02-16T00:00:00Z',

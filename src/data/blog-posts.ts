@@ -58,21 +58,6 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'A deep dive into our distributed AI infrastructure and the lessons learned building an autonomous development team.',
     lang: 'en',
   },
-  {
-    slug: 'how-we-built-onde-la',
-    title: 'How We Built Onde.la: Architecture & Stack',
-    subtitle: 'Engineering Deep Dive',
-    description: 'The technical story behind Onde.la - from Next.js 15 to Cloudflare Pages and AI-generated assets.',
-    date: 'January 2026',
-    dateISO: '2026-01-20T00:00:00Z',
-    readTime: '10 min read',
-    category: 'Engineering',
-    tags: ['Next.js', 'Cloudflare', 'Architecture', 'AI'],
-    emoji: '🌊',
-    gradient: 'from-teal-500 via-cyan-500 to-blue-500',
-    excerpt: 'Discover the stack that powers our maritime-themed creative workshop.',
-    lang: 'en',
-  },
 ]
 
 export function getBlogPost(slug: string): BlogPost | undefined {
