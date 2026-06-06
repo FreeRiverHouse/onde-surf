@@ -43,21 +43,6 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Detailed guide on how we achieved 24GB VRAM ML inference on M1 Macs using external GPUs and TinyGrad.',
     lang: 'en',
   },
-  {
-    slug: 'multi-agent-setup',
-    title: 'Multi-Agent Setup: 2 Macs, 5 Bots, Zero Humans',
-    subtitle: 'Our 24/7 AI Team',
-    description: 'How we run a coordinated team of 5 AI agents across 2 machines using git-based task management.',
-    date: 'February 2026',
-    dateISO: '2026-02-10T00:00:00Z',
-    readTime: '12 min read',
-    category: 'AI',
-    tags: ['AI Agents', 'Claude', 'Automation', 'DevOps'],
-    emoji: '🤖',
-    gradient: 'from-blue-500 via-indigo-500 to-purple-500',
-    excerpt: 'A deep dive into our distributed AI infrastructure and the lessons learned building an autonomous development team.',
-    lang: 'en',
-  },
 ]
 
 export function getBlogPost(slug: string): BlogPost | undefined {
