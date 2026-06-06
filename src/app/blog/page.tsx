@@ -292,8 +292,10 @@ export default function BlogPage() {
             ✨ Explore More on Onde
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <Link
-              href="/libri/"
+            <a
+              href="https://onde.la/libri/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center gap-3 p-5 min-h-[64px] card-3d hover:border-onde-ocean/20 dark:hover:border-white/20 transition-all active:scale-[0.98]"
             >
               <span className="text-3xl group-hover:scale-110 transition-transform">📚</span>
@@ -301,9 +303,11 @@ export default function BlogPage() {
                 <p className="font-bold text-onde-ocean dark:text-white">Books</p>
                 <p className="text-sm text-onde-ocean/60 dark:text-white/60">Free illustrated classics</p>
               </div>
-            </Link>
-            <Link
-              href="/games/"
+            </a>
+            <a
+              href="https://onde.la/games/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center gap-3 p-5 min-h-[64px] card-3d hover:border-onde-ocean/20 dark:hover:border-white/20 transition-all active:scale-[0.98]"
             >
               <span className="text-3xl group-hover:scale-110 transition-transform">🎮</span>
@@ -311,17 +315,19 @@ export default function BlogPage() {
                 <p className="font-bold text-onde-ocean dark:text-white">Games</p>
                 <p className="text-sm text-onde-ocean/60 dark:text-white/60">50+ free browser games</p>
               </div>
-            </Link>
-            <Link
-              href="/about/"
+            </a>
+            <a
+              href="https://onde.la"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center gap-3 p-5 min-h-[64px] card-3d hover:border-onde-ocean/20 dark:hover:border-white/20 transition-all active:scale-[0.98]"
             >
               <span className="text-3xl group-hover:scale-110 transition-transform">🌊</span>
               <div>
-                <p className="font-bold text-onde-ocean dark:text-white">About</p>
+                <p className="font-bold text-onde-ocean dark:text-white">About Onde</p>
                 <p className="text-sm text-onde-ocean/60 dark:text-white/60">Our story & mission</p>
               </div>
-            </Link>
+            </a>
           </div>
         </motion.div>
       </section>
