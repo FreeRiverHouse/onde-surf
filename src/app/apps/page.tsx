@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const apps = [
   {
     slug: 'onde-vibe',
-    name: 'Onde Vibe',
+    name: 'OndeTalk',
     tagline: 'Push-to-talk dictation for macOS',
     description: 'Whisper-powered voice dictation that runs 100% locally. Press a key, speak, release — text appears wherever your cursor is.',
     tags: ['macOS', 'Free', 'Apple Silicon'],

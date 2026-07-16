@@ -4,7 +4,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Onde Vibe — onde.surf',
+  title: 'OndeTalk — onde.surf',
   description: 'Push-to-talk dictation for macOS. Whisper-powered, 100% local, Apple Silicon native.',
 }
 
@@ -74,7 +74,7 @@ const requirements = [
   { label: 'Permission', value: 'Microphone & Accessibility access' },
 ]
 
-export default function OndeVibePage() {
+export default function OndeTalkPage() {
   return (
     <div className="min-h-screen bg-ocean-950">
       <Nav />
@@ -91,7 +91,7 @@ export default function OndeVibePage() {
             <span>/</span>
             <Link href="/apps/" className="hover:text-slate-300 transition-colors">apps</Link>
             <span>/</span>
-            <span className="text-slate-300">onde-vibe</span>
+            <span className="text-slate-300">ondetalk</span>
           </div>
 
           <div className="flex flex-col md:flex-row items-start gap-12">
@@ -132,7 +132,7 @@ export default function OndeVibePage() {
               </div>
 
               <h1 className="text-5xl md:text-6xl font-black text-white mb-3 leading-tight">
-                Onde Vibe
+                OndeTalk
               </h1>
               <p className="text-xl text-wave-400/80 font-medium mb-4">
                 Push-to-talk dictation for macOS
@@ -198,7 +198,7 @@ export default function OndeVibePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 { n: '01', title: 'Hold', desc: 'Press and hold your configured hotkey (default: Option). The app enters recording mode.' },
-                { n: '02', title: 'Speak', desc: 'Say anything. Onde Vibe records your voice locally with no cloud involved.' },
+                { n: '02', title: 'Speak', desc: 'Say anything. OndeTalk records your voice locally with no cloud involved.' },
                 { n: '03', title: 'Release', desc: 'Release the key. Whisper transcribes instantly and types the text into your active app.' },
               ].map((step) => (
                 <div key={step.n} className="relative">
@@ -273,14 +273,11 @@ export default function OndeVibePage() {
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
-              Download Onde Vibe — Free
+              Download OndeTalk — Free
             </a>
 
             <p className="mt-6 text-xs text-slate-600">
-              macOS 15+ · Apple Silicon · Signed &amp; Notarized by Apple ·{' '}
-              <a href="https://github.com/FreeRiverHouse/ONDE-VIBE" target="_blank" rel="noopener noreferrer" className="hover:text-slate-400 transition-colors">
-                Open source ↗
-              </a>
+              macOS 15+ · Apple Silicon · Signed &amp; Notarized by Apple
             </p>
           </div>
         </div>

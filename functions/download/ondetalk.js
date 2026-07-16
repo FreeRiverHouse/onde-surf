@@ -6,7 +6,7 @@ const PAGE = (error = '') => `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download ONDE VIBE — onde.surf</title>
+  <title>Download OndeTalk — onde.surf</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -137,7 +137,7 @@ const PAGE = (error = '') => `<!DOCTYPE html>
 <body>
   <div class="card">
     <div class="logo">onde.surf</div>
-    <h1>ONDE VIBE</h1>
+    <h1>OndeTalk</h1>
     <p>Enter your email and access code<br>to download the macOS app.</p>
     <div id="error-msg" style="display:none;margin-top:14px;font-size:13px;color:#f97316;text-align:center"></div>
     <div id="form-area">
@@ -160,16 +160,16 @@ const PAGE = (error = '') => `<!DOCTYPE html>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <div class="step-text">Drag <strong>ONDE VIBE</strong> into your <strong>Applications</strong> folder.</div>
+        <div class="step-text">Drag <strong>OndeTalk</strong> into your <strong>Applications</strong> folder.</div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-text">
           <strong>First launch only</strong> — macOS may block the app with a security warning.
           <div class="gatekeeper-box">
-            <p>If you see <em>"Apple could not verify ONDE VIBE…"</em>:</p>
+            <p>If you see <em>"Apple could not verify OndeTalk…"</em>:</p>
             <p>Go to <strong>System Settings → Privacy &amp; Security</strong>, scroll down, and click <strong>Open Anyway</strong>.</p>
-            <p>Or right-click <strong>ONDE VIBE</strong> in Applications and choose <strong>Open</strong>.</p>
+            <p>Or right-click <strong>OndeTalk</strong> in Applications and choose <strong>Open</strong>.</p>
           </div>
         </div>
       </div>
@@ -189,7 +189,7 @@ const PAGE = (error = '') => `<!DOCTYPE html>
       btn.textContent = 'Checking...'
       err.style.display = 'none'
       try {
-        const resp = await fetch('/download/onde-vibe', {
+        const resp = await fetch('/download/ondetalk', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, key }),
@@ -219,7 +219,7 @@ const PAGE = (error = '') => `<!DOCTYPE html>
     }
     document.addEventListener('keydown', e => { if(e.key==='Enter') doDownload() })
     </script>
-    <a class="back" href="/apps/onde-vibe">← Back to Onde Vibe</a>
+    <a class="back" href="/apps/onde-vibe">← Back to OndeTalk</a>
   </div>
 </body>
 </html>`

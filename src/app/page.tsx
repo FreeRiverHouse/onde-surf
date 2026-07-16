@@ -57,7 +57,7 @@ export default function Home() {
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
-              Download Onde Vibe
+              Download OndeTalk
             </Link>
           </div>
         </div>
@@ -126,7 +126,7 @@ export default function Home() {
                   </div>
 
                   <h3 className="text-3xl md:text-4xl font-bold text-white mb-3 group-hover:text-gradient-wave transition-all">
-                    Onde Vibe
+                    OndeTalk
                   </h3>
                   <p className="text-slate-400 text-lg leading-relaxed mb-6 max-w-xl">
                     Push-to-talk dictation for macOS, powered by Whisper AI.
@@ -231,13 +231,13 @@ export default function Home() {
                 Ready to ride the wave?
               </h2>
               <p className="text-slate-400 mb-8 text-lg">
-                Start with Onde Vibe — free, local, fast.
+                Start with OndeTalk — free, local, fast.
               </p>
               <Link href="/apps/onde-vibe/" className="btn-primary text-base px-10 py-4 inline-flex">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
-                Get Onde Vibe — Free
+                Get OndeTalk — Free
               </Link>
             </div>
           </div>
