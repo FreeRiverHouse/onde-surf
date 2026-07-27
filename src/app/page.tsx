@@ -28,7 +28,7 @@ export default function Home() {
         <div className="relative z-10 text-center max-w-4xl mx-auto px-6 pt-24 pb-16">
           <div className="badge mb-8 mx-auto w-fit animate-fade-up">
             <span className="w-1.5 h-1.5 rounded-full bg-wave-400 animate-pulse" />
-            Now available for macOS
+            Onde Delay 1.0 · private release
           </div>
 
           <h1
@@ -53,11 +53,11 @@ export default function Home() {
               </svg>
               Browse Apps
             </Link>
-            <Link href="/apps/onde-vibe/" className="btn-ghost text-base px-8 py-4">
+            <Link href="/apps/onde-delay/" className="btn-ghost text-base px-8 py-4">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
-              Download OndeTalk
+              Explore Onde Delay
             </Link>
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <Link href="/apps/onde-vibe/" className="block group">
+          <Link href="/apps/onde-delay/" className="block group">
             <div className="glass glass-hover rounded-3xl p-8 md:p-12 glow-cyan">
               <div className="flex flex-col md:flex-row items-start gap-10">
                 {/* App icon */}
@@ -120,17 +120,17 @@ export default function Home() {
                 {/* Content */}
                 <div className="flex-1">
                   <div className="flex flex-wrap items-center gap-3 mb-4">
-                    <span className="badge">macOS</span>
-                    <span className="badge" style={{ color: '#4ade80', borderColor: 'rgba(74,222,128,0.3)', background: 'rgba(74,222,128,0.08)' }}>Free</span>
+                    <span className="badge">AU + VST3</span>
+                    <span className="badge" style={{ color: '#4ade80', borderColor: 'rgba(74,222,128,0.3)', background: 'rgba(74,222,128,0.08)' }}>Private release</span>
                     <span className="badge" style={{ color: '#c084fc', borderColor: 'rgba(192,132,252,0.3)', background: 'rgba(192,132,252,0.08)' }}>Apple Silicon</span>
                   </div>
 
                   <h3 className="text-3xl md:text-4xl font-bold text-white mb-3 group-hover:text-gradient-wave transition-all">
-                    OndeTalk
+                    Onde Delay
                   </h3>
                   <p className="text-slate-400 text-lg leading-relaxed mb-6 max-w-xl">
-                    Push-to-talk dictation for macOS, powered by Whisper AI.
-                    Everything runs locally — your words never leave your machine.
+                    Two complete delay engines in series: dark analog character,
+                    surgical digital precision and performance-first control.
                   </p>
 
                   <div className="flex flex-wrap gap-6 text-sm text-slate-500">
@@ -138,19 +138,19 @@ export default function Home() {
                       <div className="w-4 h-4 rounded-full flex items-center justify-center" style={{ background: 'rgba(14,165,233,0.2)' }}>
                         <div className="w-1.5 h-1.5 rounded-full bg-wave-400" />
                       </div>
-                      100% local AI
+                      Analog ↔ Digital routing
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-4 h-4 rounded-full flex items-center justify-center" style={{ background: 'rgba(14,165,233,0.2)' }}>
                         <div className="w-1.5 h-1.5 rounded-full bg-wave-400" />
                       </div>
-                      Whisper medium model
+                      Reverse + freeze
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-4 h-4 rounded-full flex items-center justify-center" style={{ background: 'rgba(14,165,233,0.2)' }}>
                         <div className="w-1.5 h-1.5 rounded-full bg-wave-400" />
                       </div>
-                      macOS 15+ Notarized
+                      Ableton Push ready
                     </div>
                   </div>
                 </div>
@@ -231,13 +231,13 @@ export default function Home() {
                 Ready to ride the wave?
               </h2>
               <p className="text-slate-400 mb-8 text-lg">
-                Start with OndeTalk — free, local, fast.
+                Enter the current with Onde Delay.
               </p>
-              <Link href="/apps/onde-vibe/" className="btn-primary text-base px-10 py-4 inline-flex">
+              <Link href="/apps/onde-delay/" className="btn-primary text-base px-10 py-4 inline-flex">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
-                Get OndeTalk — Free
+                Explore Onde Delay
               </Link>
             </div>
           </div>

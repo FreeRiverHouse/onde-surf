@@ -10,6 +10,27 @@ export const metadata: Metadata = {
 
 const apps = [
   {
+    slug: 'onde-delay',
+    name: 'Onde Delay',
+    tagline: 'Two delays. One current.',
+    description: 'A complete analog delay and a precise digital delay in series, with reverse, freeze, host sync and performance-first control.',
+    tags: ['AU + VST3', 'Private Release', 'Apple Silicon'],
+    tagColors: [
+      { color: '#f5a524', border: 'rgba(245,165,36,0.3)', bg: 'rgba(245,165,36,0.08)' },
+      { color: '#4ade80', border: 'rgba(74,222,128,0.3)', bg: 'rgba(74,222,128,0.08)' },
+      { color: '#40d9ff', border: 'rgba(64,217,255,0.3)', bg: 'rgba(64,217,255,0.08)' },
+    ],
+    status: 'Available',
+    icon: (
+      <svg viewBox="0 0 64 64" fill="none" className="w-12 h-12">
+        <circle cx="20" cy="32" r="11" stroke="#f5a524" strokeWidth="3" />
+        <circle cx="44" cy="32" r="11" stroke="#40d9ff" strokeWidth="3" />
+        <path d="M31 32h2" stroke="#e2e8f0" strokeWidth="3" strokeLinecap="round" />
+        <path d="M20 21v6M44 21v6" stroke="#e2e8f0" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
     slug: 'onde-vibe',
     name: 'OndeTalk',
     tagline: 'Push-to-talk dictation for macOS',
@@ -118,20 +139,6 @@ export default function AppsPage() {
               </Link>
             ))}
 
-            {/* Coming soon card */}
-            <div className="glass rounded-3xl p-8 opacity-50 border-dashed" style={{ borderStyle: 'dashed' }}>
-              <div className="flex items-center justify-center h-full min-h-48">
-                <div className="text-center">
-                  <div className="w-12 h-12 rounded-2xl glass flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-6 h-6 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                    </svg>
-                  </div>
-                  <p className="text-slate-500 font-medium">More coming</p>
-                  <p className="text-slate-600 text-sm mt-1">Stay tuned.</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
