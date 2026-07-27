@@ -1,4 +1,41 @@
 (() => {
+  if ('scrollRestoration' in window.history) {
+    window.history.scrollRestoration = 'manual'
+  }
+
+  document.documentElement.style.scrollBehavior = 'auto'
+  document.documentElement.style.overflowAnchor = 'none'
+
+  if (window.location.hash) {
+    window.history.replaceState(
+      null,
+      '',
+      `${window.location.pathname}${window.location.search}`,
+    )
+  }
+
+  const resetInitialScroll = () => window.scrollTo(0, 0)
+  resetInitialScroll()
+  window.addEventListener('pageshow', resetInitialScroll, { once: true })
+
+  const reducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)',
+  ).matches
+
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const target = document.querySelector(link.getAttribute('href'))
+      if (!target) return
+
+      event.preventDefault()
+      target.scrollIntoView({
+        behavior: reducedMotion ? 'auto' : 'smooth',
+        block: 'start',
+      })
+      window.history.replaceState(null, '', link.getAttribute('href'))
+    })
+  })
+
   const routeButtons = Array.from(
     document.querySelectorAll('.route-selector button'),
   )
