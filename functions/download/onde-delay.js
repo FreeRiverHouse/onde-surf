@@ -1,6 +1,5 @@
-const RELEASE_ORIGIN =
-  'https://onde-delay-blacksite.sharp-alder-0264.chatgpt.site'
-const ACCESS_CODE = '0nd3'
+const RELEASE_PATH =
+  '/onde-delay-static/releases/e3bd04c1956b3c8f88591a29becaaa612c596aac839b0482.dmg'
 
 function hasAccess(request) {
   return (request.headers.get('Cookie') || '')
@@ -19,20 +18,7 @@ export async function onRequestGet({ request }) {
     })
   }
 
-  const unlock = await fetch(`${RELEASE_ORIGIN}/api/unlock`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ code: ACCESS_CODE }),
-  })
-
-  const releaseCookie = unlock.headers.get('Set-Cookie')?.split(';')[0]
-  if (!unlock.ok || !releaseCookie) {
-    return new Response('Release service unavailable.', { status: 503 })
-  }
-
-  const release = await fetch(`${RELEASE_ORIGIN}/download`, {
-    headers: { Cookie: releaseCookie },
-  })
+  const release = await fetch(new URL(RELEASE_PATH, request.url))
 
   if (!release.ok || !release.body) {
     return new Response('Release payload unavailable.', { status: 503 })
