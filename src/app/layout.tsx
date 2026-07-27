@@ -7,7 +7,7 @@ const CF_ANALYTICS_TOKEN = process.env.NEXT_PUBLIC_CF_ANALYTICS_TOKEN
 export const metadata: Metadata = {
   title: 'onde.surf — Tools that flow.',
   description: 'Handcrafted macOS apps and tools for creators who move at the speed of waves.',
-  keywords: ['macOS apps', 'developer tools', 'onde', 'surf', 'ondetalk', 'dictation app'],
+  keywords: ['macOS apps', 'audio plugins', 'delay plugin', 'onde', 'surf'],
   authors: [{ name: 'Free River House' }],
   openGraph: {
     title: 'onde.surf — Tools that flow.',

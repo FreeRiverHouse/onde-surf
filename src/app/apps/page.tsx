@@ -30,35 +30,6 @@ const apps = [
       </svg>
     ),
   },
-  {
-    slug: 'onde-vibe',
-    name: 'OndeTalk',
-    tagline: 'Push-to-talk dictation for macOS',
-    description: 'Whisper-powered voice dictation that runs 100% locally. Press a key, speak, release — text appears wherever your cursor is.',
-    tags: ['macOS', 'Free', 'Apple Silicon'],
-    tagColors: [
-      { color: '#38bdf8', border: 'rgba(56,189,248,0.3)', bg: 'rgba(56,189,248,0.08)' },
-      { color: '#4ade80', border: 'rgba(74,222,128,0.3)', bg: 'rgba(74,222,128,0.08)' },
-      { color: '#c084fc', border: 'rgba(192,132,252,0.3)', bg: 'rgba(192,132,252,0.08)' },
-    ],
-    status: 'Available',
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" className="w-12 h-12">
-        <defs>
-          <linearGradient id="vibe-icon-apps" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#38bdf8" />
-            <stop offset="0.5" stopColor="#0ea5e9" />
-            <stop offset="1" stopColor="#f97316" />
-          </linearGradient>
-        </defs>
-        <rect x="8" y="24" width="6" height="16" rx="3" fill="url(#vibe-icon-apps)" opacity="0.6" />
-        <rect x="18" y="16" width="6" height="32" rx="3" fill="url(#vibe-icon-apps)" opacity="0.8" />
-        <rect x="28" y="10" width="6" height="44" rx="3" fill="url(#vibe-icon-apps)" />
-        <rect x="38" y="18" width="6" height="28" rx="3" fill="url(#vibe-icon-apps)" opacity="0.8" />
-        <rect x="48" y="26" width="6" height="12" rx="3" fill="url(#vibe-icon-apps)" opacity="0.6" />
-      </svg>
-    ),
-  },
 ]
 
 export default function AppsPage() {

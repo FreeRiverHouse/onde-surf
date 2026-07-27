@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="grid grid-cols-2 gap-x-16 gap-y-3 text-sm">
             <div className="col-span-2 text-xs font-semibold tracking-widest uppercase text-slate-600 mb-1">Products</div>
             <Link href="/apps/" className="text-slate-400 hover:text-wave-400 transition-colors">Apps</Link>
-            <Link href="/apps/onde-vibe/" className="text-slate-400 hover:text-wave-400 transition-colors">OndeTalk</Link>
+            <Link href="/apps/onde-delay/" className="text-slate-400 hover:text-wave-400 transition-colors">Onde Delay</Link>
             <div className="col-span-2 text-xs font-semibold tracking-widest uppercase text-slate-600 mb-1 mt-4">Company</div>
             <a href="https://onde.la" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-wave-400 transition-colors">onde.la</a>
             <a href="mailto:hello@onde.surf" className="text-slate-400 hover:text-wave-400 transition-colors">Contact</a>
