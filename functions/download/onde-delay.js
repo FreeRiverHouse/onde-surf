@@ -1,5 +1,5 @@
 const RELEASE_PATH =
-  '/onde-delay-static/releases/e3bd04c1956b3c8f88591a29becaaa612c596aac839b0482.dmg'
+  '/onde-delay-static/releases/bd65a30771a3a4ffd1a4d0129964208640b873e58fc868ea.dmg'
 
 function hasAccess(request) {
   return (request.headers.get('Cookie') || '')
