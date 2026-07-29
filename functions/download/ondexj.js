@@ -1,5 +1,5 @@
 const RELEASE_PATH =
-  '/onde-delay-static/release-payloads/416daf0002418469584ee276c0b138b9ad5662ec37ee3aeb1cd4602c205e1479.dmg'
+  '/onde-delay-static/release-payloads/c8b0845dac9805fbe2758070d5650abc62b0f6e318530a6bbcf536dedeedb64d.dmg'
 const encoder = new TextEncoder()
 
 function decodeBase64Url(value) {
@@ -77,7 +77,7 @@ export async function onRequestGet({ request, env }) {
   headers.set('Content-Type', 'application/x-apple-diskimage')
   headers.set(
     'Content-Disposition',
-    'attachment; filename="OndeXJ-0.1.0-Apple-Silicon-Preview-14.dmg"',
+    'attachment; filename="OndeXJ-0.1.0-Apple-Silicon-Preview-15.dmg"',
   )
   headers.set('X-Content-Type-Options', 'nosniff')
   const contentLength = release.headers.get('Content-Length')
