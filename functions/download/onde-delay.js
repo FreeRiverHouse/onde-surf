@@ -1,5 +1,5 @@
 const RELEASE_PATH =
-  '/onde-delay-static/releases/bd65a30771a3a4ffd1a4d0129964208640b873e58fc868ea.dmg'
+  '/onde-delay-static/release-payloads/d9b8c72f76df6c21538f472f954a64327fba0b5b9c81b136b9b3e5379a278e25.dmg'
 
 function hasAccess(request) {
   return (request.headers.get('Cookie') || '')
@@ -7,7 +7,7 @@ function hasAccess(request) {
     .some((entry) => entry.trim() === 'onde_delay_access=granted')
 }
 
-export async function onRequestGet({ request }) {
+export async function onRequestGet({ request, env }) {
   if (!hasAccess(request)) {
     return new Response('Private release code required.', {
       status: 403,
@@ -18,7 +18,9 @@ export async function onRequestGet({ request }) {
     })
   }
 
-  const release = await fetch(new URL(RELEASE_PATH, request.url))
+  const release = await env.ASSETS.fetch(
+    new Request(new URL(RELEASE_PATH, request.url)),
+  )
 
   if (!release.ok || !release.body) {
     return new Response('Release payload unavailable.', { status: 503 })
@@ -29,7 +31,7 @@ export async function onRequestGet({ request }) {
   headers.set('Content-Type', 'application/x-apple-diskimage')
   headers.set(
     'Content-Disposition',
-    'attachment; filename="Onde-Delay-1.0.0-macOS.dmg"',
+    'attachment; filename="Onde-Delay-2.0.0-macOS.dmg"',
   )
   headers.set('X-Content-Type-Options', 'nosniff')
 

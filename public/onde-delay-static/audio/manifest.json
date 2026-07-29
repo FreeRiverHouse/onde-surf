@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 2,
+  "generation": {
+    "sourceRoot": "OndeDelay/build-v2/audio-examples",
+    "sourceFormat": "PCM 24-bit / 44.1 kHz mono",
+    "webFormat": "AAC-LC / 48 kHz mono / 160 kb/s",
+    "loudnessTargetLufs": -16,
+    "truePeakCeilingDbtp": -1.5
+  },
+  "examples": [
+    {
+      "id": "straight",
+      "title": "Straight",
+      "path": "/audio/straight.m4a",
+      "sourceMaster": "onde-delay-straight.wav",
+      "sourceSha256": "96b06ff948279ccd80ef4e483d4401d69e690a7e4ebfad911ad2dba3f10ac9f9",
+      "sha256": "62a08485cedb7ee0fe7bbb6a45765276d91e4ff55290a362bfdaedf310fb742f",
+      "durationSeconds": 20,
+      "integratedLoudnessLufs": -16.08,
+      "truePeakDbtp": -7.18
+    },
+    {
+      "id": "bounce",
+      "title": "Bounce",
+      "path": "/audio/bounce.m4a",
+      "sourceMaster": "onde-delay-bounce.wav",
+      "sourceSha256": "7a63dd504b0620b4e1c4a436b5ff96ec5b0e537cc2c080d63f196ac1b3b795ea",
+      "sha256": "6a06b1ca2d180df3b2c30b4ae7e389fac4dd7ac42f02ce54adc0809a1e56f37f",
+      "durationSeconds": 20,
+      "integratedLoudnessLufs": -16.08,
+      "truePeakDbtp": -6.46
+    },
+    {
+      "id": "flip",
+      "title": "Flip",
+      "path": "/audio/flip.m4a",
+      "sourceMaster": "onde-delay-flip.wav",
+      "sourceSha256": "f39c96eaa3a6886c48abb55de994885016da0b75fb657700134ed0f29dc665c7",
+      "sha256": "bce8e9a075208e58b0ed1cd6adac2551254b0c109f41372a33f342090c5c4b46",
+      "durationSeconds": 20,
+      "integratedLoudnessLufs": -16.1,
+      "truePeakDbtp": -4.35
+    },
+    {
+      "id": "bloom",
+      "title": "Bloom",
+      "path": "/audio/bloom.m4a",
+      "sourceMaster": "onde-delay-bloom.wav",
+      "sourceSha256": "4d987aaafb0f6c3b0dc65a6f40a3c4ed66047a3e57ffa7431b0aca1e6b6d246c",
+      "sha256": "2747b0f56f4d0effecc1de424b3b6271e15e494cae02de9a0b595532d9021dcc",
+      "durationSeconds": 20,
+      "integratedLoudnessLufs": -16.06,
+      "truePeakDbtp": -7.82
+    },
+    {
+      "id": "throw",
+      "title": "Throw",
+      "path": "/audio/throw.m4a",
+      "sourceMaster": "onde-delay-throw.wav",
+      "sourceSha256": "1862c89d03d6b57d96e03bbd15d271fa134e60b27bb476e696901e247580bce6",
+      "sha256": "eb5c3c0ecffdc2cc6c28dab0f91f42415816feb98372a53d9d21f2b951edf3a2",
+      "durationSeconds": 20,
+      "integratedLoudnessLufs": -16.09,
+      "truePeakDbtp": -7.53
+    },
+    {
+      "id": "hold",
+      "title": "Hold",
+      "path": "/audio/hold.m4a",
+      "sourceMaster": "onde-delay-hold.wav",
+      "sourceSha256": "c16b6335c3b3386975ab91d9a4611a7f8456f281ecb9d68c2363aaf6c9c6d2d6",
+      "sha256": "a4a75f0eff22d4d64dc6f19af73b31a1167dc164d927888dabba1e39c76645e2",
+      "durationSeconds": 20,
+      "integratedLoudnessLufs": -16.1,
+      "truePeakDbtp": -7.48
+    }
+  ],
+  "pairwiseAudit": [
+    {
+      "a": "straight",
+      "b": "bounce",
+      "waveformCorrelation": 0.569039
+    },
+    {
+      "a": "straight",
+      "b": "flip",
+      "waveformCorrelation": -0.012757
+    },
+    {
+      "a": "straight",
+      "b": "bloom",
+      "waveformCorrelation": 0.624841
+    },
+    {
+      "a": "straight",
+      "b": "throw",
+      "waveformCorrelation": 0.519388
+    },
+    {
+      "a": "straight",
+      "b": "hold",
+      "waveformCorrelation": 0.933026
+    },
+    {
+      "a": "bounce",
+      "b": "flip",
+      "waveformCorrelation": -0.001483
+    },
+    {
+      "a": "bounce",
+      "b": "bloom",
+      "waveformCorrelation": 0.658131
+    },
+    {
+      "a": "bounce",
+      "b": "throw",
+      "waveformCorrelation": 0.551371
+    },
+    {
+      "a": "bounce",
+      "b": "hold",
+      "waveformCorrelation": 0.56382
+    },
+    {
+      "a": "flip",
+      "b": "bloom",
+      "waveformCorrelation": -0.002054
+    },
+    {
+      "a": "flip",
+      "b": "throw",
+      "waveformCorrelation": -0.005959
+    },
+    {
+      "a": "flip",
+      "b": "hold",
+      "waveformCorrelation": -0.009945
+    },
+    {
+      "a": "bloom",
+      "b": "throw",
+      "waveformCorrelation": 0.611084
+    },
+    {
+      "a": "bloom",
+      "b": "hold",
+      "waveformCorrelation": 0.614641
+    },
+    {
+      "a": "throw",
+      "b": "hold",
+      "waveformCorrelation": 0.515271
+    }
+  ]
+}

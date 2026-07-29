@@ -1,118 +1,156 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import {
+  ArrowDownRight,
+  ArrowUpRight,
+  AudioLines,
+  Check,
+  CircleDot,
+} from 'lucide-react'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import { effects } from '@/data/effects'
 
 export const metadata: Metadata = {
-  title: 'Apps — onde.surf',
-  description: 'All apps and tools by Free River House.',
+  title: 'Onde Effects — Seven instruments for sound in motion',
+  description:
+    'Explore Onde Delay, Reverb, Loop, Wah, Guitar MIDI, Drive and Gate — a focused suite for Ableton Live and macOS.',
 }
-
-const apps = [
-  {
-    slug: 'onde-delay',
-    name: 'Onde Delay',
-    tagline: 'Two delays. One current.',
-    description: 'A complete analog delay and a precise digital delay in series, with reverse, freeze, host sync and performance-first control.',
-    tags: ['AU + VST3', 'Private Release', 'Apple Silicon'],
-    tagColors: [
-      { color: '#f5a524', border: 'rgba(245,165,36,0.3)', bg: 'rgba(245,165,36,0.08)' },
-      { color: '#4ade80', border: 'rgba(74,222,128,0.3)', bg: 'rgba(74,222,128,0.08)' },
-      { color: '#40d9ff', border: 'rgba(64,217,255,0.3)', bg: 'rgba(64,217,255,0.08)' },
-    ],
-    status: 'Available',
-    icon: (
-      <svg viewBox="0 0 64 64" fill="none" className="w-12 h-12">
-        <circle cx="20" cy="32" r="11" stroke="#f5a524" strokeWidth="3" />
-        <circle cx="44" cy="32" r="11" stroke="#40d9ff" strokeWidth="3" />
-        <path d="M31 32h2" stroke="#e2e8f0" strokeWidth="3" strokeLinecap="round" />
-        <path d="M20 21v6M44 21v6" stroke="#e2e8f0" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-]
 
 export default function AppsPage() {
   return (
-    <div className="min-h-screen bg-ocean-950">
+    <div className="min-h-screen suite-shell">
       <Nav />
 
-      <div className="pt-32 pb-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="mb-16">
-            <div className="section-label mb-4">Apps & Tools</div>
-            <h1 className="text-5xl md:text-6xl font-black text-white mb-4">
-              Built to last.
-            </h1>
-            <p className="text-xl text-slate-400 max-w-xl">
-              Small, focused, native apps for macOS. No subscriptions, no bullshit.
-            </p>
-          </div>
+      <main>
+        <section className="suite-catalog-hero">
+          <div className="suite-noise" />
+          <div className="suite-beam suite-beam-one" />
+          <div className="suite-beam suite-beam-two" />
 
-          {/* Apps Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {apps.map((app) => (
-              <Link key={app.slug} href={`/apps/${app.slug}/`} className="block group">
-                <div className="glass glass-hover rounded-3xl p-8 h-full">
-                  <div className="flex items-start gap-6">
-                    {/* Icon */}
-                    <div
-                      className="flex-shrink-0 w-20 h-20 rounded-2xl flex items-center justify-center"
-                      style={{
-                        background: 'linear-gradient(135deg, #0f2d54 0%, #0a1f3d 100%)',
-                        border: '1px solid rgba(14,165,233,0.2)',
-                        boxShadow: '0 0 30px rgba(14,165,233,0.1)',
-                      }}
-                    >
-                      {app.icon}
+          <div className="suite-wrap relative z-10">
+            <div className="suite-kicker">
+              <AudioLines size={15} />
+              Onde audio instruments · 01—07
+            </div>
+
+            <div className="catalog-title-grid">
+              <h1>
+                Seven ways
+                <span>to move sound.</span>
+              </h1>
+              <div className="catalog-intro">
+                <p>
+                  A new family of focused effects for producers and performers.
+                  Built on macOS, validated in Ableton Live and designed as playable
+                  instruments—not utility boxes.
+                </p>
+                <a href="#collection" className="suite-text-link">
+                  Enter the collection <ArrowDownRight size={17} />
+                </a>
+              </div>
+            </div>
+
+            <div className="catalog-wave" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </div>
+          </div>
+        </section>
+
+        <section id="collection" className="suite-catalog">
+          <div className="suite-wrap">
+            <div className="catalog-rail">
+              <span>THE ONDE COLLECTION</span>
+              <span>MAC + ABLETON FIRST</span>
+              <span>APPLE SILICON NATIVE</span>
+            </div>
+
+            <div className="effect-stack">
+              {effects.map((effect) => {
+                const content = (
+                  <article
+                    className={`effect-row ${effect.status === 'Released' ? 'effect-row-live' : ''}`}
+                    style={
+                      {
+                        '--accent': effect.accent,
+                        '--accent-soft': effect.accentSoft,
+                      } as React.CSSProperties
+                    }
+                  >
+                    <div className="effect-index">{effect.index}</div>
+                    <div className="effect-art">
+                      <img src={effect.image} alt="" loading="lazy" />
+                      <span aria-hidden="true">{effect.index}</span>
                     </div>
 
-                    <div className="flex-1 min-w-0">
-                      <div className="flex flex-wrap gap-2 mb-3">
-                        {app.tags.map((tag, i) => (
-                          <span
-                            key={tag}
-                            className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
-                            style={{
-                              color: app.tagColors[i]?.color,
-                              borderColor: app.tagColors[i]?.border,
-                              background: app.tagColors[i]?.bg,
-                              border: `1px solid ${app.tagColors[i]?.border}`,
-                            }}
-                          >
-                            {tag}
-                          </span>
+                    <div className="effect-copy">
+                      <div className="effect-kind">{effect.kind}</div>
+                      <h2>{effect.name}</h2>
+                      <p className="effect-tagline">{effect.tagline}</p>
+                      <p className="effect-description">{effect.description}</p>
+                      <ul>
+                        {effect.features.map((feature) => (
+                          <li key={feature}>
+                            <Check size={13} />
+                            {feature}
+                          </li>
                         ))}
+                      </ul>
+                    </div>
+
+                    <div className="effect-meta">
+                      <div className={`effect-status ${effect.status === 'Released' ? 'is-live' : ''}`}>
+                        <CircleDot size={13} />
+                        {effect.status}
                       </div>
-
-                      <h2 className="text-2xl font-bold text-white mb-1 group-hover:text-wave-400 transition-colors">
-                        {app.name}
-                      </h2>
-                      <p className="text-wave-500/70 text-sm font-medium mb-3">{app.tagline}</p>
-                      <p className="text-slate-400 text-sm leading-relaxed">{app.description}</p>
+                      <p>{effect.statusDetail}</p>
+                      {effect.status === 'Released' ? (
+                        <span className="effect-action">
+                          Explore + download <ArrowUpRight size={17} />
+                        </span>
+                      ) : (
+                        <span className="effect-action">
+                          Open product concept <ArrowUpRight size={17} />
+                        </span>
+                      )}
                     </div>
-                  </div>
 
-                  <div className="mt-6 flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-xs text-green-400">
-                      <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                      {app.status}
-                    </div>
-                    <span className="text-sm text-slate-500 group-hover:text-wave-400 transition-colors flex items-center gap-1">
-                      View app
-                      <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                      </svg>
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            ))}
+                    <div className="effect-scanline" aria-hidden="true" />
+                  </article>
+                )
 
+                return (
+                  <Link key={effect.slug} href={effect.href} className="effect-link">
+                    {content}
+                  </Link>
+                )
+              })}
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
+
+        <section className="suite-manifesto">
+          <div className="suite-wrap manifesto-grid">
+            <div>
+              <div className="suite-kicker">Built as instruments</div>
+              <h2>Fast enough for instinct. Deep enough for accidents.</h2>
+            </div>
+            <div className="manifesto-copy">
+              <p>
+                Every control is exposed for automation. Every module is ordered
+                for hands-on work. The first target is a tight macOS and Ableton
+                experience; wider formats arrive only after the sound and workflow
+                are genuinely ready.
+              </p>
+              <Link href="/apps/onde-delay/" className="btn-primary">
+                Get Onde Delay <ArrowUpRight size={17} />
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
 
       <Footer />
     </div>
