@@ -1,0 +1,278 @@
+const DMG_URL = 'https://github.com/FreeRiverHouse/ondetalk-releases/releases/download/v1.0.58/ondetalk-1.0.58-arm64.dmg'
+const PASSWORD = '0nd326'
+
+const PAGE = (error = '') => `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download OndeTalk — onde.surf</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #020817;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #e2e8f0;
+    }
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 48px 40px;
+      width: 100%;
+      max-width: 420px;
+      backdrop-filter: blur(20px);
+      text-align: center;
+    }
+    .logo {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #0ea5e9;
+      margin-bottom: 32px;
+    }
+    h1 { font-size: 22px; font-weight: 700; margin-bottom: 8px; color: #f1f5f9; }
+    p { font-size: 14px; color: #64748b; margin-bottom: 28px; line-height: 1.5; }
+    .field { margin-bottom: 10px; text-align: left; }
+    label { display: block; font-size: 12px; color: #475569; margin-bottom: 5px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
+    input {
+      width: 100%;
+      padding: 13px 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      color: #f1f5f9;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input:focus { border-color: #0ea5e9; }
+    input::placeholder { color: #475569; }
+    button {
+      width: 100%;
+      margin-top: 16px;
+      padding: 14px;
+      background: #0ea5e9;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    button:hover { background: #0284c7; }
+    button:active { transform: scale(0.98); }
+    .error { margin-top: 14px; font-size: 13px; color: #f97316; text-align: center; }
+    .back { display: block; margin-top: 24px; font-size: 13px; color: #475569; text-decoration: none; text-align: center; }
+    .back:hover { color: #94a3b8; }
+    .divider { margin: 20px 0; border: none; border-top: 1px solid rgba(255,255,255,0.06); }
+    .hint { font-size: 12px; color: #334155; margin-top: 16px; text-align: center; }
+    #install-steps {
+      display: none;
+      margin-top: 24px;
+      text-align: left;
+    }
+    #install-steps h2 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+    .step {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(14,165,233,0.15);
+      border: 1px solid rgba(14,165,233,0.3);
+      color: #0ea5e9;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-text { font-size: 13px; color: #94a3b8; line-height: 1.5; padding-top: 2px; }
+    .step-text strong { color: #e2e8f0; }
+    .step-text code {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-size: 11px;
+      color: #7dd3fc;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+    .gatekeeper-box {
+      background: rgba(251,146,60,0.07);
+      border: 1px solid rgba(251,146,60,0.2);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-top: 6px;
+    }
+    .gatekeeper-box p {
+      font-size: 12px;
+      color: #fb923c;
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+    .gatekeeper-box p:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">onde.surf</div>
+    <h1>OndeTalk</h1>
+    <p>Enter your email and access code<br>to download the macOS app.</p>
+    <div id="error-msg" style="display:none;margin-top:14px;font-size:13px;color:#f97316;text-align:center"></div>
+    <div id="form-area">
+      <div class="field">
+        <label>Email</label>
+        <input type="email" id="email" placeholder="you@example.com" required autocomplete="email">
+      </div>
+      <div class="field">
+        <label>Access code</label>
+        <input type="password" id="key" placeholder="••••••••••" required autocomplete="off">
+      </div>
+      <button id="btn" onclick="doDownload()">Download for macOS →</button>
+      <p class="hint">macOS arm64 · v1.0.58 · ~166 MB</p>
+    </div>
+    <div id="install-steps">
+      <h2>Installation steps</h2>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">Open the <strong>.dmg</strong> file from your Downloads folder when it finishes.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">Drag <strong>OndeTalk</strong> into your <strong>Applications</strong> folder.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <strong>First launch only</strong> — macOS may block the app with a security warning.
+          <div class="gatekeeper-box">
+            <p>If you see <em>"Apple could not verify OndeTalk…"</em>:</p>
+            <p>Go to <strong>System Settings → Privacy &amp; Security</strong>, scroll down, and click <strong>Open Anyway</strong>.</p>
+            <p>Or right-click <strong>OndeTalk</strong> in Applications and choose <strong>Open</strong>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text">Sign in with your Google account and start dictating with the <strong>Fn key</strong>.</div>
+      </div>
+    </div>
+    <script>
+    async function doDownload() {
+      const email = document.getElementById('email').value.trim()
+      const key = document.getElementById('key').value
+      const btn = document.getElementById('btn')
+      const err = document.getElementById('error-msg')
+      if (!email || !key) return
+      btn.disabled = true
+      btn.textContent = 'Checking...'
+      err.style.display = 'none'
+      try {
+        const resp = await fetch('/download/ondetalk', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, key }),
+          redirect: 'manual'
+        })
+        if (resp.type === 'opaqueredirect' || resp.status === 302 || resp.ok) {
+          const data = await resp.json().catch(() => null)
+          if (data && data.url) {
+            window.location.href = data.url
+          }
+          // Show install instructions, hide form
+          document.getElementById('form-area').style.display = 'none'
+          document.getElementById('install-steps').style.display = 'block'
+        } else {
+          const data = await resp.json().catch(() => ({}))
+          err.textContent = data.error || 'Wrong access code. Try again.'
+          err.style.display = 'block'
+          btn.disabled = false
+          btn.textContent = 'Download for macOS →'
+        }
+      } catch(e) {
+        err.textContent = 'Network error. Try again.'
+        err.style.display = 'block'
+        btn.disabled = false
+        btn.textContent = 'Download for macOS →'
+      }
+    }
+    document.addEventListener('keydown', e => { if(e.key==='Enter') doDownload() })
+    </script>
+    <a class="back" href="/">← Back to onde.surf</a>
+  </div>
+</body>
+</html>`
+
+export async function onRequest(context) {
+  const { request, env } = context
+
+  if (request.method === 'POST') {
+    // Accept JSON (from fetch) — avoids all special-char encoding issues
+    const ct = request.headers.get('content-type') ?? ''
+    let email = '', key = ''
+    if (ct.includes('application/json')) {
+      const json = await request.json().catch(() => ({}))
+      email = (json.email ?? '').trim().toLowerCase()
+      key = json.key ?? ''
+    } else {
+      const body = await request.formData().catch(() => null)
+      email = (body?.get('email') ?? '').trim().toLowerCase()
+      key = body?.get('key') ?? ''
+    }
+
+    if (key !== PASSWORD) {
+      return new Response(JSON.stringify({ error: 'Wrong access code. Try again.' }), {
+        status: 403,
+        headers: { 'Content-Type': 'application/json' }
+      })
+    }
+
+    // Save lead to KV
+    if (env.LEADS && email) {
+      const ip = request.headers.get('CF-Connecting-IP') ?? ''
+      const country = request.headers.get('CF-IPCountry') ?? ''
+      const lead = JSON.stringify({ email, ip, country, app: 'ondetalk', version: '1.0.58', ts: new Date().toISOString() })
+      await env.LEADS.put(`lead:${email}`, lead).catch(() => null)
+      await env.LEADS.put(`ts:${Date.now()}:${email}`, email).catch(() => null)
+    }
+
+    // Follow GitHub redirect server-side, return CDN URL to client
+    const resp = await fetch(DMG_URL, {
+      redirect: 'follow',
+      headers: { 'User-Agent': 'onde.surf/1.0' }
+    })
+    return new Response(JSON.stringify({ url: resp.url }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' }
+    })
+  }
+
+  // GET — show password gate (no-cache so browsers always get fresh JS)
+  return new Response(PAGE(), {
+    headers: {
+      'Content-Type': 'text/html;charset=UTF-8',
+      'Cache-Control': 'no-store, no-cache, must-revalidate'
+    }
+  })
+}
